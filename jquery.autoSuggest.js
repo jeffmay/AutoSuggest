@@ -44,7 +44,7 @@
 		  	selectionClick: function(elem){},
 		  	selectionAdded: function(elem){},
 		  	selectionRemoved: function(elem){ elem.remove(); },
-			selectTopResult: false,
+			selectTopResult: false, //automatically select the top result
 		  	formatList: false, //callback function
 		  	beforeRetrieve: function(string){ return string; },
 		  	retrieveComplete: function(data){ return data; },
