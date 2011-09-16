@@ -44,6 +44,7 @@
 		  	selectionClick: function(elem){},
 		  	selectionAdded: function(elem){},
 		  	selectionRemoved: function(elem){ elem.remove(); },
+			selectTopResult: false,
 		  	formatList: false, //callback function
 		  	beforeRetrieve: function(string){ return string; },
 		  	retrieveComplete: function(data){ return data; },
@@ -321,6 +322,9 @@
 					}
 					results_ul.css("width", selections_holder.outerWidth());
 					results_holder.show();
+					if(matchCount > 0 && opts.selectTopResult) {
+						moveSelection("down");
+					}
 					opts.resultsComplete.call(this);
 				}
 				
