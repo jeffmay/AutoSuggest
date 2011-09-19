@@ -200,12 +200,13 @@
 							break;
 						case 9: case 13: // tab or return
 							add_token = false;
-							var active = $("li.active:first", results_holder);
+							var active = $("li.active:first:visible", results_holder);
 							if(active.length > 0){
 								active.click();
 								results_holder.hide();
+								e.preventDefault();
 							}
-							if(opts.neverSubmit || active.length > 0){
+                            else if(opts.neverSubmit) {
 								e.preventDefault();
 							}
 							break;
